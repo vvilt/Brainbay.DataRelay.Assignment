@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+  <span>All Characters</span>
+</mat-toolbar>
+
+<div class="container">
+  <mat-card>
+    <mat-card-content>
+      <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+      <div *ngIf="errorMessage" class="error">
+        {{ errorMessage }}
+      </div>
+
+      <div *ngIf="!loading && characters.length > 0">
+        <app-character-table [characters]="characters" [totalCount]="totalCount" [page]="page" [pageSize]="pageSize"
+          (pageChange)="onPageChange($event)">
+        </app-character-table>
+      </div>
+
+      <div *ngIf="!loading && characters.length === 0 && !errorMessage">
+        <p>No characters found.</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

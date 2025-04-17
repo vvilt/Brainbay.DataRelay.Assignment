@@ -1,0 +1,16 @@
+services:
+  brainbay.datarelay.api:
+    image: ${DOCKER_REGISTRY-}brainbaydatarelayapi
+    depends_on:
+      mssql:
+        condition: service_started
+    build:
+      context: .
+      dockerfile: Brainbay.DataRelay.API/Dockerfile
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports:
+    - "1433:1433"
+    environment:
+     - ACCEPT_EULA=Y
+     - SA_PASSWORD=yourStrong(!)Password

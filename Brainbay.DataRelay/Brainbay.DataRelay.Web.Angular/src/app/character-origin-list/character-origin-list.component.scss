@@ -1,0 +1,26 @@
+$container-max-width: 900px;
+$margin-vertical: 20px;
+$padding-container: 8px;
+
+.container {
+  margin: $margin-vertical auto;
+  max-width: $container-max-width;
+  padding: $padding-container;
+
+  .search-character-form {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+
+    mat-form-field {
+      flex: 1 1 auto;
+    }
+  }
+
+  .error {
+    color: red;
+    margin-top: 16px;
+  }
+}

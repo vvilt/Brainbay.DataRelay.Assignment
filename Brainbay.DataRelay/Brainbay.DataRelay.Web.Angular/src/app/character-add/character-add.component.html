@@ -1,0 +1,52 @@
+<mat-toolbar color="primary">
+    <span>Add New Character</span>
+</mat-toolbar>
+
+<div class="container">
+    <mat-card>
+        <mat-card-content>
+            <form #characterForm="ngForm" (ngSubmit)="onSubmit(characterForm)">
+                <mat-form-field appearance="fill">
+                    <mat-label>Name</mat-label>
+                    <input matInput name="name" [(ngModel)]="character.name" required>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Location</mat-label>
+                    <input matInput placeholder="Select location" [formControl]="locationControl"
+                        [matAutocomplete]="autoLocation">
+                    <mat-autocomplete #autoLocation="matAutocomplete"
+                        (optionSelected)="onLocationSelected($event.option.value)"
+                        (closed)="onAutocompleteClosed('location')" [displayWith]="displayLocation.bind(this)">
+                        <mat-option *ngFor="let loc of filteredLocations | async" [value]="loc">
+                            {{ loc.name }}
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Origin</mat-label>
+                    <input matInput placeholder="Select origin" [formControl]="originControl"
+                        [matAutocomplete]="autoOrigin">
+                    <mat-autocomplete #autoOrigin="matAutocomplete"
+                        (optionSelected)="onOriginSelected($event.option.value)"
+                        (closed)="onAutocompleteClosed('origin')" [displayWith]="displayLocation.bind(this)">
+                        <mat-option *ngFor="let loc of filteredOrigins | async" [value]="loc">
+                            {{ loc.name }}
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+
+                <button mat-raised-button color="accent" type="submit">Add Character</button>
+            </form>
+
+            <div *ngIf="successMessage" class="success">
+                {{ successMessage }}
+            </div>
+
+            <div *ngIf="errorMessage" class="error">
+                {{ errorMessage }}
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

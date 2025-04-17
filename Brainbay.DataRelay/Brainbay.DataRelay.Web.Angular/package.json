@@ -1,0 +1,38 @@
+{
+  "name": "angular-material-rick-and-morty",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve --open=true --port=4501 --proxy-config proxies/local.proxy.json --disable-host-check=true",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~19.2.7",
+    "@angular/common": "~19.2.7",
+    "@angular/compiler": "~19.2.7",
+    "@angular/core": "~19.2.7",
+    "@angular/forms": "~19.2.7",
+    "@angular/platform-browser": "~19.2.7",
+    "@angular/platform-browser-dynamic": "~19.2.7",
+    "@angular/router": "~19.2.7",
+    "@angular/material": "^19.2.7",
+    "@angular/cdk": "^19.2.7",
+    "rxjs": "~7.8.2",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/architect": "0.1902.8",
+    "@angular-devkit/build-angular": "19.2.8",
+    "@angular-devkit/core": "19.2.8",
+    "@angular-devkit/schematics": "19.2.8",
+    "@angular/cli": "19.2.8",
+    "@angular/compiler-cli": "~19.2.7",
+    "@schematics/angular": "19.2.8",
+    "typescript": "5.7.3"
+  }
+}

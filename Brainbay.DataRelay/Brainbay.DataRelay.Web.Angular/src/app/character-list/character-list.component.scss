@@ -1,0 +1,14 @@
+$container-max-width: 900px;
+$margin-vertical: 20px;
+$padding-container: 8px;
+
+.container {
+  margin: $margin-vertical auto;
+  max-width: $container-max-width;
+  padding: $padding-container;
+
+  .error {
+    color: red;
+    margin-top: 16px;
+  }
+}
