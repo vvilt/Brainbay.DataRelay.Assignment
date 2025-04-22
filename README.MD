@@ -10,3 +10,6 @@ Execute `dotnet run` command from `Brainbay.DataRelay\Brainbay.DataRelay.Sync.Co
 # Frontend
 Run `npm start` from `Brainbay.DataRelay\Brainbay.DataRelay.Web.Angular` folder.
 
+# Tests
+Run `dotnet test` from `Brainbay.DataRelay\Brainbay.DataRelay.API.Tests` folder.
+
