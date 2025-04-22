@@ -16,7 +16,7 @@ namespace Brainbay.DataRelay.API
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-
+            
             builder.Services
                 .AddDataAccessSql(builder.Configuration.GetSection("DataBase:SqlServer"))
                 .AddDomainDataAccessSql()
@@ -25,6 +25,8 @@ namespace Brainbay.DataRelay.API
 
             builder.Services
                 .AddTransient<CachedHeaderMiddleware>();
+
+            builder.Services.AddHostedService<MigrationHostedService>();
 
             var app = builder.Build();
 

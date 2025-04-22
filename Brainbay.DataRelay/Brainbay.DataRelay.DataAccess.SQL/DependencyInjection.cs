@@ -41,9 +41,8 @@ public static class DependencyInjection
         if (recreate)
         {
             dbContext.EnsureDeleted();
+            dbContext.Migrate();
         }
-
-        dbContext.Migrate();
 
         return serviceCollection;
     }

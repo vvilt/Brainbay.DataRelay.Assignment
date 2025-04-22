@@ -39,19 +39,10 @@ public class CustomWebApplicationFactory<TProgram> : WebApplicationFactory<TProg
             {
                 options.UseSqlServer(_connectionString);
             });
-
-            var sp = services.BuildServiceProvider();
-            using (var scope = sp.CreateScope())
-            {
-                var db = scope.ServiceProvider.GetRequiredService<RickAndMortyDbContext>();
-                db.Database.EnsureCreated();
-
-                SeedTestData(db);
-            }
         });
     }
 
-    private void SeedTestData(RickAndMortyDbContext context)
+    public void SeedTestData(RickAndMortyDbContext context)
     {
         if (Locations == null)
         {

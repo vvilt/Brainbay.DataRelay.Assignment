@@ -1,9 +1,10 @@
 using System.Text;
 using System.Text.Json;
-using System.Text.RegularExpressions;
 using Brainbay.DataRelay.API.Middlewares;
 using Brainbay.DataRelay.API.Models;
 using Brainbay.DataRelay.Application.DTOs;
+using Brainbay.DataRelay.DataAccess.SQL;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Brainbay.DataRelay.API.Tests;
 
@@ -149,6 +150,9 @@ public class CharacterRetrievalIntegrationTests : IAsyncLifetime
         string connectionString = _msSqlFixture.GetConnectionString(true);
         _factory = new CustomWebApplicationFactory<Program>(connectionString);
         _client = _factory.CreateClient();
+        await using var scope = _factory.Services.CreateAsyncScope();
+        var dbContext = scope.ServiceProvider.GetRequiredService<RickAndMortyDbContext>();
+        _factory.SeedTestData(dbContext);
     }
 
     public async Task DisposeAsync()
