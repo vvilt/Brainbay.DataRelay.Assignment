@@ -54,7 +54,7 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-material-rick-and-morty:build:production"
+              "buildTarget": "angular-material-rick-and-morty:build:production"
             }
           }
         }

@@ -2,7 +2,7 @@
 {
   "name": "Angular dev container",
   "dockerFile": "Dockerfile",
-  "workspaceFolder": "/workspace",
+  // "workspaceFolder": "/workspace",
   "forwardPorts": [
     4501
   ],
@@ -18,8 +18,8 @@
         "docker.docker"
       ]
     }
-  },
-  "mounts": [
-    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
-  ]
+  }
+  // ,"mounts": [
+  //   "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+  // ]
 }
