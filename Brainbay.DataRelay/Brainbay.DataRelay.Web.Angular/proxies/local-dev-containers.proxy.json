@@ -1,0 +1,9 @@
+{
+    "/api":{
+      "target": "http://host.docker.internal:4502/",
+      "secure": false,
+      "logLevel": "debug",
+      "xfwd": true,
+      "changeOrigin": true
+    }
+  }

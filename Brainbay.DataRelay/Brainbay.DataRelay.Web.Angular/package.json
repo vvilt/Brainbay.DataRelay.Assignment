@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open=true --port=4501 --proxy-config proxies/local.proxy.json --disable-host-check=true",
+    "start-dev-containers": "ng serve --host 0.0.0.0 --open=true --port=4501 --proxy-config proxies/local-dev-containers.proxy.json --disable-host-check=true --poll=1000",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

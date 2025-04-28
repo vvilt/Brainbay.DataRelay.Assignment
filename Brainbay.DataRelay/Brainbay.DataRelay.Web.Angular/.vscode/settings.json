@@ -1,0 +1,16 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "npm.packageManager": "npm",
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/tmp": true,
+    "**/.git": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/tmp": true,
+    "**/.git": true
+  }
+}

@@ -1,0 +1,25 @@
+// Reference: https://code.visualstudio.com/docs/remote/containers#_devcontainerjson-reference
+{
+  "name": "Angular dev container",
+  "dockerFile": "Dockerfile",
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [
+    4501
+  ],
+  "appPort": [
+    4501
+  ],
+  "postStartCommand": "npm install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Angular.ng-template",
+        "ms-azuretools.vscode-docker",
+        "docker.docker"
+      ]
+    }
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+  ]
+}
